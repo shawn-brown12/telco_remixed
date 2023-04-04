@@ -18,11 +18,41 @@ The goal of this project is to, using various pieces of customer data, predict w
 
 # Intial Hypothesis and Questions
 
+**From my initial sweep through this project:**
 
+My initial hypothesis is that the biggest drivers of churn will be their contract type, whether or not they have internet and phone services, and what type of internet they have.
+
+My main questions to determine this:
+
+- Is whether or not a customer churns independent of their internet service type?
+
+- Are contract type and churn status related?
+
+- What is the relationship between phone service and churn?
+
+- Does gender factor into churn?
+
+- Do monthly charges differ for different contract types?
+
+**This Iteration**
+
+Now I know the following:
+
+- Internet service type, and contract type are huge when it comes to importance.
+
+- Monthly charges are also important, though not as important as the two above.
+
+- Phone service, age, and gender didn't play much into churn status.
+
+- Customers with fiber optic internet churned way more than the other categories.
+
+I want to look further into:
+
+- 
 
 # Data Dictionary
 
-| **Feature | Definition** |
+| **Feature** | **Definition** |
 |:--------|:-----------|
 
 # My Plan Going Forward
