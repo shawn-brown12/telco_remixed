@@ -52,8 +52,36 @@ I want to look further into:
 
 # Data Dictionary
 
+For each entry below: 
+
+- A 0 means 'No', and a 1 means 'Yes'.
+
+- Most of the categorical columns include either a yes or no, as well as a 'No internet/phone service' option
+
+    - An example for this would be 'Multiple Lines', there are three categories in this column - yes, no, and no phone service
+
 | **Feature** | **Definition** |
 |:--------|:-----------|
+|**Gender** | If a customer is male or female|
+|**Senior** Citizen | If a customer has senior citizen status|
+|**Partner** | If someone has a partner|
+|**Dependents** | If someone has dependents|
+|**Tenure** | The length a customer (in months) has been with the company|
+|**Phone Service** | If a customer has phone service through the company|
+|**Paperless Billing** | If a customer has paperless billing or not|
+|**Monthly Charges** | A customers monthly bill|
+|**Total Charges** | The total a customer has paid the company|
+|**Churn** (Target Variable) | Whether or not a customer has left the company|
+|**Payment Type** | The customers payment type (0 for manual and 1 for automatic)|
+|**Multiple Lines** | If a customer has multiple lines or not|
+|**Online Security** | If a customer has online security services|
+|**Online Backup** | If a customer has online backup services with the company|
+|**Device Protection** | If a customer has device protection|
+|**Tech Support** | If a customer has tech support included in their plan|
+|**Streaming TV** | If a customer has TV streaming included|
+|**Streaming Movies** | If a customer has movie streaming included|
+|**Contract Type** | The customers contract type (Month to month, 1 year, or 2 years)|
+|**Internet Service Type** | The customers internet service type (fiber optic, dsl, or no internet)|
 
 # My Plan Going Forward
 
