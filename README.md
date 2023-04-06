@@ -1,5 +1,3 @@
-#ignore this -- test upload for getting ubuntu running
-
 Hello all! This is my first post-Codeup project, and I've decided I want to go back through every project we did there and make them better. Without further adieu, here's:
 
 # Telecom Churn - Remixed
@@ -89,13 +87,13 @@ For each entry below:
 
 | **Library** | **Documentation** |
 |:-------|:-----------|
-|**Pandas**| (https://pandas.pydata.org/docs/) |
-|**NumPy**| (https://numpy.org/doc/) |
-|**Matplotlib**| (https://matplotlib.org/stable/index.html) |
-|**Seaborn**| (https://seaborn.pydata.org/) |
-|**SciPy**| (https://docs.scipy.org/doc//scipy/index.html) |
-|**Scikit-learn**| (https://scikit-learn.org/stable/user_guide.html) |
-|**XGBoost**| (https://xgboost.readthedocs.io/en/stable/index.html) |
+|**Pandas**| https://pandas.pydata.org/docs/ |
+|**NumPy**| https://numpy.org/doc/ |
+|**Matplotlib**| https://matplotlib.org/stable/index.html |
+|**Seaborn**| https://seaborn.pydata.org/ |
+|**SciPy**| https://docs.scipy.org/doc//scipy/index.html |
+|**Scikit-learn**| https://scikit-learn.org/stable/user_guide.html |
+|**XGBoost**| https://xgboost.readthedocs.io/en/stable/index.html |
 
 # My Plan Going Forward
 
