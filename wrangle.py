@@ -86,9 +86,9 @@ def prep_telco_data():
     
     # Changing back the 1s and 0s in the categorical columns to yes's and no's
     for col in df.columns:
-    if df[col].dtypes == 'object':
-        df[col] = df[col].replace(1, 'Yes')
-        df[col] = df[col].replace(0, 'No')
+        if df[col].dtypes == 'object':
+            df[col] = df[col].replace(1, 'Yes')
+            df[col] = df[col].replace(0, 'No')
 
     # Loop to get numericl and categorical columns
     for col in df.columns:

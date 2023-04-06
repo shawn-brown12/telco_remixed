@@ -18,6 +18,26 @@ def create_dummies(df, cols):
 
 #--------------------------------------------
 
+def train_test(df, col, strat='Yes', seed=42):
+    '''
+    This function will split the data into a large train set, putting the rest into the test set. The reason you would use this over a 
+    train, validate, and test split is for the purpose of using cross-validation. This function takes in a dataframe,
+    a specific column that you're stratifying on, and a seed, which the default is set to 42. This function also takes the 
+    optional argument for if you want to stratify at all, with it defaulting to yes.
+    '''
+    if strat == 'Yes':
+        
+        train, test = train_test_split(df, train_size=.8, random_state=seed, stratify=df[col])
+    
+        return train, test
+
+    else:
+        
+        train, test = train_test_split(df, train_size=.8, random_state=seed)
+        
+        return train, test
+
+#--------------------------------------------
 
 
 
@@ -25,24 +45,11 @@ def create_dummies(df, cols):
 
 
 
-
 #--------------------------------------------
 
 
 
-
 #--------------------------------------------
-
-
-
-
-#--------------------------------------------
-
-
-
-
-#--------------------------------------------
-
 
 
 
