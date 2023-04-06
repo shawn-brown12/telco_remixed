@@ -83,12 +83,43 @@ For each entry below:
 |**Contract Type** | The customers contract type (Month to month, 1 year, or 2 years)|
 |**Internet Service Type** | The customers internet service type (fiber optic, dsl, or no internet)|
 
+# Libraries Used
+
+| **Library** | **Documentation** |
+|:-------|:-----------|
+|**Pandas**| (https://pandas.pydata.org/docs/) |
+|**NumPy**| (https://numpy.org/doc/) |
+|**Matplotlib**| (https://matplotlib.org/stable/index.html) |
+|**Seaborn**| (https://seaborn.pydata.org/) |
+|**SciPy**| (https://docs.scipy.org/doc//scipy/index.html) |
+|**Scikit-learn**| (https://scikit-learn.org/stable/user_guide.html) |
+|**XGBoost**| (https://xgboost.readthedocs.io/en/stable/index.html) |
+
 # My Plan Going Forward
 
 # Steps to Reproduce this notebook
 
 # Conclusions
 
-# Takeaways
+## Takeaways
 
-# Next Steps
+- Roughly 1/4 of customers churn.
+
+- The biggest driver of churn seems to be the customers contract type; When a customer has a month-to-month contract, churn is just over 40%, or 2/5.
+
+- Internet service type also plays a significant role in churn, though not as large as their contract type.
+
+- Customers with fiber optic internet churned much more than those with either no internet or DSL.
+
+- Whether or not a customer has phone service doesn't play a significant role in churn.
+
+- Neither age or gender have much of an effect on whether or not someone will churn.
+
+- Monthly charges also seem to play a role in churn.
+
+- The final model beats the baseline accuracy for predicting whether someone will churn by about 8%.
+
+# Recommendations
+
+
+## Next Steps
