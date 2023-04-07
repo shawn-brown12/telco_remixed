@@ -38,7 +38,7 @@ My main questions to determine this:
 
 Now I know the following:
 
-- Internet service type, and contract type are huge when it comes to importance.
+- Internet service type, and contract type are important features.
 
 - Monthly charges are also important, though not as important as the two above.
 
@@ -52,9 +52,7 @@ I want to look further into:
 
 # Data Dictionary
 
-For each entry below: 
-
-- A 0 means 'No', and a 1 means 'Yes'.
+- For the 'churn' column,  0 means 'No', and a 1 means 'Yes'.
 
 - Most of the categorical columns include either a yes or no, as well as a 'No internet/phone service' option
 
@@ -62,8 +60,8 @@ For each entry below:
 
 | **Feature** | **Definition** |
 |:--------|:-----------|
-|**Gender** | If a customer is male or female|
-|**Senior** Citizen | If a customer has senior citizen status|
+|**Gender** | If a customer is male or female; 1 for male, 0 for female|
+|**Senior Citizen** | If a customer has senior citizen status|
 |**Partner** | If someone has a partner|
 |**Dependents** | If someone has dependents|
 |**Tenure** | The length a customer (in months) has been with the company|
@@ -98,6 +96,14 @@ For each entry below:
 # My Plan Going Forward
 
 # Steps to Reproduce this notebook
+
+1. Clone this repository
+
+2. Acquire the dataset through kaggle
+
+3. Store the data within the cloned repository
+
+4. Run the final notebook
 
 # Conclusions
 

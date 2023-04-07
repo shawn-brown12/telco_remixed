@@ -14,50 +14,35 @@ warnings.filterwarnings("ignore")
 np.set_printoptions(suppress=True)
 
 seed = 42
+        
+#------------------------------------------------------------
+
+
 
 #------------------------------------------------------------
 
- def df_splits(df, col, val='Yes', strat='Yes', seed=42):
-    '''
-    This function takes in a dataframe and a taget column, as well as several optional arguments. You can decide if you want a validate set and if you want to stratify. 
-    By leaving those two variables alone you will stratify on the target column and get a validate subset. If you change them to anything when calling the function,
-    you will not get a validate or stratification. There is also an argument for the seed, which is set to 42 by default.
-    '''
-    # If val is left alone at 'Yes', the function will run this loop and return a validate subset.
-    if val == 'Yes':
-        # If strat is left alone at 'Yes', the function will stratify by the column named when calling the function.
-        if strat == 'Yes':
-            # Train, validate, and test subsets created.
-            train, val_test = train_test_split(df, train_size=.6, random_state=seed, stratify=df[col])
-            validate, test = train_test_split(val_test, train_size=.6, random_state=seed, stratify=val_test[col])
-            # Printing the shapes of each subset 
-            print(train.shape, validate.shape, test.shape)
-            return train, validate, test
-        # If the strat argument is changed at all, it will default to not doing it and not stratify when splitting.
-        else:
-            #Splitting the data into train, validate, and test.
-            train, val_test = train_test_split(df, train_size=.6, random_state=seed)
-            validate, test = train_test_split(val_test, train_size=.6, random_state=seed)
-            # Again, printing the subset
-            print(train.shape, validate.shape, test.shape)
-            return train, validate, test
-    # This part of the loop is for if you changed the val argument to something other than 'Yes', which will make it not create a validate subset. 
-    else:
-        # If strat is left at 'Yes', the function will stratify on the column named when calling the function
-        if strat == 'Yes':
-            # Splitting the data into train and test subsets
-            train, test = train_test_split(df, train_size=.8, random_state=seed, stratify=df[col])
-            # Printing the shapes
-            print(train.shape, test.shape)
-            return train, test
 
-        else:
-            # Splitting the data into train and test
-            train, test = train_test_split(df, train_size=.8, random_state=seed)
-            # Printing the shapes
-            print(train.shape, test.shape)
-            return train, test
+
+#------------------------------------------------------------
+
+
+
+#------------------------------------------------------------
+    
+def Xy_validate(validate, target):
+    '''
+    This function will take in a validate df and target column from that df and create X and y subsets.
+    '''  
+    # Creating the validate subsets 
+    X_val = validate.drop(columns=target)
+    y_val = validate[target]
+ 
+    # Resetting indexes
+    X_val = X_val.reset_index(drop= True)
+    y_val = y_val.reset_index(drop= True)
         
+    return X_val, y_val
+    
 #------------------------------------------------------------
 
 def mannwhitney_report(group1, group2):
@@ -180,19 +165,70 @@ def anova_report(group1, group2, group3, group4, group5):
     
 #------------------------------------------------------------
 
-
+def create_dummies(df, cols):
+    '''
+    This function will, quite simply, create dummy variables for a dataframe, remove the columns used to create them, 
+    and then concat the dummies back onto the dataframe
+    '''
+    # This will create the dummy variables from our categorical columns list
+    dummies = pd.get_dummies(df[cols], drop_first=True)
+    # This will drop the original categorical columns from the df
+    df = df.drop(columns=cols)
+    # This will concatenate the dummies onto the current df
+    df = pd.concat([df, dummies], axis=1)
+            
+    return df
 
 #------------------------------------------------------------
 
-
+def Xy_validate(validate, target):
+    '''
+    This function will take in a validate df and target column from that df and create X and y subsets.
+    '''  
+    # Creating the validate subsets 
+    X_val = validate.drop(columns=target)
+    y_val = validate[target]
+ 
+    # Resetting indexes
+    X_val = X_val.reset_index(drop= True)
+    y_val = y_val.reset_index(drop= True)
+        
+    return X_val, y_val
 
 #------------------------------------------------------------
 
-
+def Xy_train_test(train, test, target):
+    '''
+    This function will take in a train and test df as well as the target column for each and create X and y subsets.
+    '''
+    # creating train and test (x and y) subsets
+    X_train = train.drop(columns= target)
+    y_train = train[target]
+        
+    # creating train and test (x and y) subsets
+    X_test = test.drop(columns= target)
+    y_test = test[target]
+    
+    # Resetting indexes
+    X_train = X_train.reset_index(drop= True)
+    y_train = y_train.reset_index(drop= True)
+    X_test = X_test.reset_index(drop= True)
+    y_test = y_test.reset_index(drop= True)
+        
+    return X_train, y_train, X_test, y_test
 
 #------------------------------------------------------------
 
-
+def subsets(train, test, validate, target):
+    '''
+    This function will call the two functions to create validate subsets and the train/test subsets in one 
+    to streamline the creation of all three subsets at once.
+    '''
+    X_val, y_val = Xy_validate(validate, target)
+    
+    X_train, y_train, X_test, y_test = Xy_train_test(train, test, target)
+    
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 #------------------------------------------------------------
 
